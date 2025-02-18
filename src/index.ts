@@ -95,7 +95,7 @@ app.get('/', (req: Request, res: Response) => {
 
 app.get('/users', async (req: Request, res: Response, next: NextFunction) => {
     try {
-        const users = await User.find();
+        const users = await User.find().limit(10);
         res.json(users);
     } catch (err: any) {
         res.status(500).json({ message: err.message });
