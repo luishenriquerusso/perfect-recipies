@@ -88,6 +88,10 @@ const Business = mongoose.model<IBusiness>('Business', BusinessSchema);
 const Recipe = mongoose.model<IRecipe>('Recipe', RecipeSchema);
 const Ingredient = mongoose.model<IIngredient>('Ingredient', IngredientSchema);
 
+app.get('/', (req: Request, res: Response) => {
+    res.send('Rota padrão');
+});
+
 
 app.get('/users', async (req: Request, res: Response, next: NextFunction) => {
     try {
